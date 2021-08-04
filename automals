@@ -1,0 +1,38 @@
+private float speed = 2.0f;
+public GameObject character;
+
+void Update () {
+		
+		if (Input.GetKey(KeyCode.d)){
+			transform.position += Vector3.right * speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.a)){
+			transform.position += Vector3.left* speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.w)){
+			transform.position += Vector3.forward * speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.s)){
+			transform.position += Vector3.back* speed * Time.deltaTime;
+		}
+	}
+  
+void OnJumpKeyPressed(spacebar)
+{
+void OnJumpKeyReleased(spacebar)
+{
+    if(velocityY < -6.0f)       // If character is still ascending in the jump
+        velocityY = -6.0f;      // Limit the speed of ascent
+}
+    velocityY = -12.0f;   // Give a vertical boost to the players velocity to start jump
+}
+float positionX, positionY;     // Position of the character
+float velocityX, velocityY;     // Velocity of the character
+float gravity = 0.5f;           // How strong is gravity
+
+void Update(float time)
+{
+    positionX += velocityX * time;      // Apply horizontal velocity to X position
+    positionY += velocityY * time;      // Apply vertical velocity to X position
+    velocityY += gravity * time;        // Apply gravity to vertical velocity
+}
